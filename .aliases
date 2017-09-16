@@ -1,0 +1,73 @@
+# Git
+alias gc="git commit -m"
+alias ga="git add"
+alias gs="git status"
+alias gp="git push"
+alias gpu="git push --set-upstream origin"
+alias gd="git diff"
+alias gm="git merge"
+alias gbd="git branch -d"
+alias gcb="git checkout -b"
+alias gco="git checkout"
+alias gb="git branch"
+
+# Git: Fixup
+# fixup specific commit `gf bb3333`
+# fixup most recent commit with matching keyword `gf :/elixir`
+alias gf="git commit --fixup"
+alias gpn="git push --set-upstream origin create-actor"
+
+# Vim
+alias vb="vim ~/.bash_profile"
+alias vk="vim ~/.keys"
+alias v="vim"
+alias s="bin/rails s"
+alias nv="nvim"
+
+# Mix
+alias ips="iex -S mix phx.server"
+alias mps="mix phx.server"
+alias mpr="mix phx.routes"
+alias mt="mix test"
+alias gl="git log --oneline --decorate --graph --all"
+alias glp="git log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'"
+alias cra="create-react-app"
+alias ho="heroku open"
+alias gph="git push heroku"
+alias sss="selenium-standalone start"
+alias ..="cd .."
+alias ...="cd ../.."
+alias l="ls -lah"
+alias va="vim ~/.aliases"
+alias vh="vim ~/.helpers"
+alias t="touch"
+alias mdc="mix deps.clean --unused --unlock"
+
+# Rails
+alias rff="rspec -ff"
+alias r="rackup"
+alias rdbm="rake db:migrate && rake db:migrate RAILS_ENV=test"
+
+# System
+alias sites="cd ~/Development/code/sites"
+
+# Directorys
+alias scrapers="cd ~/Development/code/ruby/scrapers"
+alias js="cd ~/Development/code/js"
+
+alias pserver="python -m SimpleHTTPServer"
+
+# JS
+alias bn="babel-node"
+
+# Bash
+alias pwdc="pwd | pbcopy"
+
+# Node
+alias install_redux="npm install react-redux --save"
+
+# yarn
+alias ys="yarn start"
+
+# middleman
+alias ms="middleman server"
