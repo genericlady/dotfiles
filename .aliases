@@ -1,15 +1,26 @@
+# how many times have i typed a command
+alias count="history | cut -d' ' -f 5 | sort | uniq -c | sort"
+
+# most common shortcuts
+alias f="foreman"
+alias fs="foreman start"
+alias n="npm"
+alias fix="rubocop --auto-correct"
+
 # Git
-alias gc="git commit -m"
 alias ga="git add"
-alias gs="git status"
-alias gp="git push"
-alias gpu="git push --set-upstream origin"
-alias gd="git diff"
-alias gm="git merge"
 alias gbd="git branch -d"
+alias gb="git branch"
+alias gc="git commit -m"
 alias gcb="git checkout -b"
 alias gco="git checkout"
-alias gb="git branch"
+alias gcm="git checkout master --"
+alias gd="git diff"
+alias gm="git merge"
+alias gp="git push"
+alias gpu="git push --set-upstream origin"
+alias gs="git status"
+alias g="git"
 
 # Git: Fixup
 # fixup specific commit `gf bb3333`
@@ -47,6 +58,11 @@ alias mdc="mix deps.clean --unused --unlock"
 alias rff="rspec -ff"
 alias r="rackup"
 alias rdbm="rake db:migrate && rake db:migrate RAILS_ENV=test"
+alias ber="bundle exec rake"
+alias berr="bundle exec rake routes"
+alias renv="bundle exec pry -r ./config/environment.rb"
+alias br="bundle exec rake"
+alias be="bundle exec"
 
 # System
 alias sites="cd ~/Development/code/sites"
@@ -62,12 +78,42 @@ alias bn="babel-node"
 
 # Bash
 alias pwdc="pwd | pbcopy"
+alias code="cd ~/Code"
+alias tr="cd ~/Code/taskrabbit"
+alias tasker="cd ~/Code/taskrabbit/tasker"
+alias v3="cd ~/Code/taskrabbit/v3"
+alias sink="cd ~/Code/taskrabbit/sink"
+alias lrn="cd ~/Code/learn"
 
 # Node
 alias install_redux="npm install react-redux --save"
+alias ns="npm start"
+alias nrj="npm run jest"
+alias npmc="npm run compile"
+alias npmt="npm test"
 
 # yarn
 alias ys="yarn start"
 
 # middleman
 alias ms="middleman server"
+
+alias sb="source ~/.bash_profile"
+
+#rbenv
+# initalize rbenv cause it's terrible
+alias rbi="eval '$(rbenv init -)'"
+
+alias x="exit"
+
+# search and replace with the silver searcher
+function agr {
+  ag -l "$1" | xargs sed -i '' -e 's/$1/$2/g'
+  # ag -0 -l "$1" | AGR_FROM="$1" AGR_TO="$2" xargs -r0 perl -pi -e 's/$ENV{AGR_FROM}/$ENV{AGR_TO}/g';
+}
+
+# ssh
+alias staging18internal="ssh -i /Users/yiannakokalas/.ssh/yianna_staging yianna@staging-18.taskrabbit.in"
+#`ssh -i /Users/{your username}/.ssh/id_rsa {your name}@staging-{your server number}.taskrabbit.in`
+#`ssh -i /Users/yiannakokalas/.ssh/id_rsa yianna@staging-18.taskrabbit.in`
+# don't forgot to sudo su deploy

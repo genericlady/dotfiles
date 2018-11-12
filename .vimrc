@@ -22,11 +22,11 @@ endfunction
 
 " Want to set this before any others
 let mapleader = "\<Space>"
+let g:syntastic_javascript_checkers=['eslint']
 
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 nmap <leader>h :echo "Hello"<cr>
-nmap <leader>p :tabe ~/.vim/bundle/vim-phoenix<cr>
 
 " <C-[>
 " capslock to escape
@@ -52,6 +52,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'ngmy/vim-rubocop'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
@@ -61,7 +62,14 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'tpope/vim-projectionist'
-Plugin 'file:///Users/yianna/.vim/bundle/vim-phoenix'
+Plugin 'prettier/vim-prettier'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'vimwiki/vimwiki'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -117,3 +125,20 @@ nnoremap <leader>K :resize +1<CR>
 nnoremap <leader>l :vertical resize -10<CR>
 nnoremap <leader>L :vertical resize -1<CR>
 
+" Syntastic settings
+" set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_id_checkers = 0
+let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+" let g:syntastic_error_symbol = "\u2717"
+" let g:syntastic_warning_symbol = "\u26A0"
+" Silver Searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+set ft=confluencewiki 
